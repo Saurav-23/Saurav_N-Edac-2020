@@ -1,0 +1,34 @@
+create database Assisgnment1;
+use Assignment1;
+
+CREATE TABLE Member(	
+Member_Id int(5) primary key,
+Member_Name varchar(30),
+Member_address varchar(50),
+Acc_Open_Date Date,
+Membership_type varchar(20),
+Penalty_Amount int(7)
+);
+
+CREATE TABLE Books(
+Book_No int(6),
+Book_Name varchar(30),
+Author_Name varchar(30),
+Cost int(7),
+Category char(10)
+);
+CREATE TABLE Issue(
+Lib_Issue_Id int(10),
+Book_No int(6),
+Member_id int(5),
+Issue_Date Date,
+Return_Date Date
+);
+desc Member;
+desc Books;
+desc Issue;
+
+ALTER TABLE Member drop COLUMN Penalty_Amount;
+
+INSERT INTO Member VALUES(1,'Richa Sharma','Pune','2005-10-12','Lifetime');
+INSERT INTO Member VALUES(2,'Garims Sen','Pune',CURRENT_DATE(),'Lifetime');

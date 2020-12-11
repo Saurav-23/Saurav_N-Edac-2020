@@ -1,0 +1,42 @@
+create database Assignment3;
+use Assignment3;
+create table department(
+dept_id int(20),
+dept_name varchar(20),
+constraint PK_department_dept_id primary key(dept_id)
+);
+drop table department;
+create table employee(
+emp int(10),
+emp_name varchar(20),
+dept_id int(20),
+salary int(20),
+manager varchar(20),
+constraint PK_employee_id primary key(emp id)
+);
+alter table add constraint PK_employee_dept_id foreign key(dept_id) references department(dept_id);
+alter table add constraint PK_employee_dept_id foreign key(manager) references department(employee_id);
+alter table employee modify empid varchar(20);
+desc employee;
+insert into department(1,'Finance');
+insert into department(2,'Training');
+insert into department(3,'Marketing');
+insert into employee (empid ,
+emp_name ,
+dept_id ,
+salary )values(1,'Arun',1,	8000);
+insert into employee(empid ,
+emp_name ,
+dept_id ,
+salary ) values(2,'kiran',1,7000),
+(3,'Scott',1,3000),
+(4,'Max',2,9000),	
+(5,'Jack',2,8000),
+(6,'King',null,6000);
+
+update employee set manager = 4 where empid=1;
+update employee set manager = 1 where empid=2;
+update employee set manager = 1 where empid=3;
+update employee set manager = 4 where empid=5;
+update employee set manager = 1 where empid=6;
+select *from employee;
